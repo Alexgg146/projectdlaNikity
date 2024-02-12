@@ -38,12 +38,9 @@ function Main() {
 
   const handleChange = (e) => {
     let { name, value } = e.target;
-
-    console.log(opros);
     setOpros(value);
   };
   const handleSubmit = (evt) => {
-    evt.preventDefault();
     window.location.reload();
     myApi.postUser(formObject);
     myApi.postEmail({
@@ -79,19 +76,17 @@ function Main() {
                 align="center"
                 paragraph
                 sx={{
-                  display: { xs: 'none', md: 'flex' },
+                  display: { xs: "none", md: "flex" },
                   fontWeight: 800,
-                  color: "white"
+                  color: "white",
                 }}
               >
-                В ПОГРАНИЧНОМ УПРАВЛЕНИИ 
-                ФСБ РОССИИ 
-                 ПО РЕСПУБЛИКЕ КАЛМЫКИЯ И
+                В ПОГРАНИЧНОМ УПРАВЛЕНИИ ФСБ РОССИИ ПО РЕСПУБЛИКЕ КАЛМЫКИЯ И
                 АСТРАХАНСКОЙ ОБЛАСТИ
               </Typography>
-            </Container> 
+            </Container>
           </Box>
-                    <FullWidthGrid />
+          <FullWidthGrid />
           <Box
             sx={{
               backgroundColor: "#1b5e20",
@@ -99,12 +94,10 @@ function Main() {
               pb: 15,
             }}
           >
-            <Container 
-              justifyContent="center"
-              alignItems="center">
-              <Grid container >
+            <Container justifyContent="center" alignItems="center">
+              <Grid container>
                 <Grid item xs={12}>
-                  <Paper sx={{padding: 2}}>
+                  <Paper sx={{ padding: 2 }}>
                     <Typography variant="h5" gutterBottom align="center">
                       Оставьте заявку на контрактную службу
                     </Typography>
@@ -236,21 +229,15 @@ function Main() {
                 </Grid>
               </Grid>
             </Container>
-            
-          </Box >
-          <Box 
+          </Box>
+          <Box
             sx={{
               backgroundColor: "#1b5e20",
               padding: 4,
-              boxShadow: 0
+              boxShadow: 0,
             }}
           >
-            <Grid
-              container
-              justifyContent="center"
-              alignItems="center"
-              
-            >
+            <Grid container justifyContent="center" alignItems="center">
               <Grid item xs={8} sm={8} md={9}>
                 <Paper>
                   <Typography variant="body1">
@@ -258,20 +245,15 @@ function Main() {
                   </Typography>
                 </Paper>
               </Grid>
-             
             </Grid>
           </Box>
-          <Box 
+          <Box
             sx={{
               backgroundColor: "#1b5e20",
-              padding: 4
+              padding: 4,
             }}
           >
-            <Grid
-              container
-              justifyContent="center"
-              alignItems="center"
-            >
+            <Grid container justifyContent="center" alignItems="center">
               <Grid item xs={8} sm={8} md={9}>
                 <Paper>
                   <Typography variant="body1">
@@ -279,13 +261,12 @@ function Main() {
                   </Typography>
                 </Paper>
               </Grid>
-             
             </Grid>
           </Box>
           <Box
             sx={{
               backgroundColor: "#1b5e20",
-              padding: 5
+              padding: 5,
             }}
           >
             <Grid
@@ -294,14 +275,13 @@ function Main() {
               justifyContent="center"
               alignItems="center"
             >
-              <Grid item xs={8} sm={8} md={9} >
+              <Grid item xs={8} sm={8} md={9}>
                 <Paper>
                   <Typography variant="body1">
                     <BasicAccordion />
                   </Typography>
                 </Paper>
               </Grid>
-             
             </Grid>
           </Box>
         </main>

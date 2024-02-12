@@ -8,7 +8,7 @@ const port = process.env.port || 3001
 app.use(cors({origin:'http://localhost:3000',credentials:true}));
 app.use(express.json())
 mongoose.connect('mongodb://127.0.0.1:27017/kontrakt', { useNewUrlParser: true, useUnifiedTopology: false });
-app.use('/api',userRouter)
+app.use('/users',userRouter)
 app.listen(port, () => {
     console.log(`Server good! http://localhost:${port}`)
 })

@@ -46,9 +46,9 @@ export default function BlaBla({user,
         <IconButton>
           <DeleteIcon
             onClick={() => {
-              myApi.deleteUser(user.id).then((data) => {
+              myApi.deleteUser(user._id).then((data) => {
                 setUsers((data) =>
-                  data.filter((c) => c.id !== user.id)
+                  data.filter((c) => c._id !== user._id)
                 );
               });
             }}
@@ -71,6 +71,7 @@ export default function BlaBla({user,
             <TableCell>
         <form
           onSubmit={(evt) => {
+            evt.preventDefault()
             setText("");
             return (
               text !== "" &&

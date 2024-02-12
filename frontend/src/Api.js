@@ -1,38 +1,40 @@
-class api{
-    checkResponse(res){
-        if (res.ok){
-            return res.json();
-        }
-        return Promise.reject(res.status);
+class api {
+  checkResponse(res) {
+    if (res.ok) {
+      return res.json();
     }
-    apiGet(){
-        return fetch("http://localhost:3001/api/user").then((res)=>res.json())
-    }
-    postUser(data){
-        return fetch ('http://localhost:3001/api/user',{
-            method:'POST',
-            headers:{'Content-Type':'application/json'
-        },credentials:'include',
-        body:JSON.stringify(data)
-        }).then((res)=>res.json())
-    }
-    postEmail(data){
-        return fetch ('http://localhost:3001/send-email',{
-            method:'POST',
-            headers:{'Content-Type':'application/json'
-        },credentials:'include',
-        body:JSON.stringify(data)
-        }).then((res)=>res.json())
-    }
-    deleteUser(id){
-        return fetch (`http://localhost:3001/api/user/${id}`,{
-            method:'DELETE',
-            headers:{'Content-Type':'application/json'
-        },credentials:'include',
-       
-        }).then((res)=>res.json())
-    }
-
+    return Promise.reject(res.status);
+  }
+  async apiGet() {
+    const res = await fetch("http://localhost:3001/users");
+      return await res.json();
+  }
+  async postUser(data) {
+    const res = await fetch("http://localhost:3001/users", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify(data),
+      });
+      return await res.json();
+  }
+  async postEmail(data) {
+    const res = await fetch("http://localhost:3001/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify(data),
+      });
+      return await res.json();
+  }
+  async deleteUser(id) {
+    const res = await fetch(`http://localhost:3001/users/${id}`, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+      });
+      return await res.json();
+  }
 }
-const myApi=new api()
+const myApi = new api();
 export default myApi;
