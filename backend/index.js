@@ -9,7 +9,7 @@ const cors = require("cors");
 const app = express();
 app.use(helmet());
 app.use(bodyParser.json());
-const port = 3001;
+const port = 5000;
 app.use(
   cors([
     { origin: "http://localhost:3000", credentials: true },
