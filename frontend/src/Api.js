@@ -6,11 +6,11 @@ class api {
     return Promise.reject(res.status);
   }
   async apiGet() {
-    const res = await fetch("http://localhost:3001/users");
+    const res = await fetch("http://51.250.87.238/users");
       return await res.json();
   }
   async postUser(data) {
-    const res = await fetch("http://localhost:3001/users", {
+    const res = await fetch("http://51.250.87.238/users", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           credentials: "include",
@@ -19,7 +19,7 @@ class api {
       return await res.json();
   }
   async postEmail(data) {
-    const res = await fetch("http://localhost:3001/send-email", {
+    const res = await fetch("http://51.250.87.238/send-email", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           credentials: "include",
@@ -28,7 +28,7 @@ class api {
       return await res.json();
   }
   async deleteUser(id) {
-    const res = await fetch(`http://localhost:3001/users/${id}`, {
+    const res = await fetch(`http://51.250.87.238/users/${id}`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
           credentials: "include",

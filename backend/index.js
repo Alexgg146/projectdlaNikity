@@ -1,8 +1,13 @@
 const nodemailer =require('nodemailer')
 const mongoose = require('mongoose');
+const helmet = require('helmet');
+const bodyParser = require('body-parser');
+const { errors } = require('celebrate');
 const userRouter = require('./router/user.router.js')
 const express = require('express')
 const cors=require('cors');
+app.use(helmet());
+app.use(bodyParser.json());
 const app = express()
 const port = process.env.port || 3001
 app.use(cors({origin:'http://localhost:3000',credentials:true}));
