@@ -41,7 +41,8 @@ function Main() {
     setOpros(value);
   };
   const handleSubmit = (evt) => {
-    window.location.reload();
+    evt.preventDefault();
+   // window.location.reload();
     myApi.postUser(formObject);
     myApi.postEmail({
       email: email.formValue,
